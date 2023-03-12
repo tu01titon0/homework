@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<htmL>
+<head>
+</head>
+<body>
+    <br>
+    <input type="number" min="0" id="number" placeholder="nhập số dân cư"> người
+    <input type="number" min="0" id="acreage" placeholder="nhập diện tích"> km2
+    <button type="submit" id="submit_result" onclick="checkResult()"> submit </button>
+    <br>
+    <p id="result"></p>
+</body>
+<script>
+    function checkResult(){
+        let number = document.getElementById('number').value;
+        let acreage  = document.getElementById('acreage').value;
+        if (number && acreage) {
+            density = number/acreage
+            message = density > 1000 ? 'Khu vực này quá đông đúc' : 'Khu vực này không quá đông đúc'
+            document.getElementById('result').innerHTML = `mat do dan so la ${density} nguoi/km2. ${message}`
+        } else {
+            alert('vui long nhap dung thong tin')
+        }
+    } 
+</script>
+</htmL> 

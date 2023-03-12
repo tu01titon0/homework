@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<htmL>
+<head>
+</head>
+<body>
+    <br>
+    Số điện: <input type="number" min="0" id="number" placeholder="Nhập số điện"> 
+    <button type="submit" id="submit_result" onclick="checkResult()"> submit </button>
+    <br>
+    <p id="result"></p>
+</body>
+<script>
+    function checkResult(){
+        const levels = [1678, 1734, 2014, 2536, 2834, 2927]
+        number = +document.getElementById('number').value;
+        if (number > 0  && number < 51) {
+            result = number * levels[0]
+        } else if (number < 101) {
+            result = 100 * levels[0] + (number - 50) * levels[1]
+        } else if (number < 201) {
+            result = 100 * levels[0] + (number - 50) * levels[1]  + (number - 100) * levels[2]
+        } else if (number < 301) {
+            result = 100 * levels[0] + (number - 50) * levels[1]  + (number - 100) * levels[2]  + (number - 200) * levels[3]
+        } else if (number < 401){
+            result = 100 * levels[0] + (number - 50) * levels[1]  + (number - 100) * levels[2]  + (number - 200) * levels[3] + (number - 300) * levels[4]
+        } else {
+            result = 100 * levels[0] + (number - 50) * levels[1]  + (number - 100) * levels[2]  + (number - 200) * levels[3] + (number - 300) * levels[4]  + (number - 250) 
+        }
+        if (number == "")
+            alert('vui long nhap dung so dien')
+        else    
+            document.getElementById('result').innerHTML = `so tien dien la ${result} dong`
+    } 
+</script>
+</htmL> 

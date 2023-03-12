@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<htmL>
+<head>
+</head>
+<body>
+    <br>
+    <h2>giải phương trình bậc 2 ax2+bx+c=0</h2>
+    <input type="number" id="number1" placeholder="a">3    <input type="number" id="number2" placeholder="nhập b">
+    <input type="number" id="number3" placeholder="nhập c">
+    <button type="submit" id="submit_result" onclick="checkResult()"> submit </button>
+    <br>
+</body>
+<script>
+    function checkResult() {
+        let a = +document.getElementById('number1').value
+        let b = +document.getElementById('number2').value
+        let c = +document.getElementById('number3').value
+        let delta = b*b - 4*a*c;
+        if (delta < 0) {
+        alert("Phương trình không có nghiệm thực");
+        } else if (delta == 0) {
+            let x = -b / (2*a);
+        alert("Phương trình có nghiệm kép x =", x);
+        } else {
+            let x1 = (-b + Math.sqrt(delta)) / (2*a);
+            let x2 = (-b - Math.sqrt(delta)) / (2*a);
+        alert("Phương trình có hai nghiệm là x1 =", x1, "và x2 =", x2);
+        }
+    }
+</script>
+</htmL> 

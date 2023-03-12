@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<htmL>
+<head>
+</head>
+<body>
+    <br>
+    Nhập 3 canh tam giác:
+    <input type="number" min="0" id="number1" placeholder="Nhập chiều dài 1 cạnh">cm
+    <input type="number" min="0" id="number2" placeholder="Nhập chiều dài 1 cạnh">cm
+    <input type="number" min="0" id="number3" placeholder="Nhập chiều dài 1 cạnh">cm 
+    <button type="submit" id="submit_result" onclick="checkResult()"> submit </button>
+    <br>
+</body>
+<script>
+    function checkResult() {
+        let a = +document.getElementById('number1').value
+        let b = +document.getElementById('number2').value
+        let c = +document.getElementById('number3').value
+        if (a + b > c && a + c > b && b + c > a) {
+            if (a === b && b === c) {
+                alert("Tam giac deu");
+            } else if (a === b || b === c || c === a) {
+                if (a * a + b * b === c * c || b * b + c * c === a * a || c * c + a * a === b * b) {
+                    alert("Tam giac vuong can");
+                } else {
+                    alert("Tam giac can");
+                }
+            } else if (a * a + b * b === c * c || b * b + c * c === a * a || c * c + a * a === b * b) {
+                alert("Tam giac vuong");
+            } else {
+                alert("Tam giac thuong");
+            }
+        } else {
+            alert("Khong phai tam giac");
+        }
+    }
+</script>
+</htmL> 
